@@ -1,0 +1,255 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+GameCoding/.vs/GameCoding/FileContentIndex/8faf6680-0bbc-4fc9-9564-a8644ce29252.vsidx
+GameCoding/.vs/GameCoding/v17/Browse.VC.db
+GameCoding/.vs/GameCoding/v17/Browse.VC.db-shm
+GameCoding/.vs/GameCoding/v17/Browse.VC.db-wal
+GameCoding/.vs/GameCoding/v17/Browse.VC.opendb
+GameCoding/.vs/GameCoding/v17/ipch/AutoPCH/2d143e5c95750049/GAMECODING.ipch
+GameCoding/.vs/GameCoding/v17/Browse.VC.db
+*.db
+GameCoding/.vs/GameCoding/v17/Browse.VC.db
+GameCoding/.vs/GameCoding/FileContentIndex/2c97897a-f938-4fde-be65-1ca5944ca40e.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/80cd8e2c-2fb2-4107-ad41-960470625105.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/89dacdfe-d798-4694-817f-92dd725c7c01.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/0ecef18c-278a-40c5-a738-bdc5235a8753.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/2d7e6650-8c59-4002-be66-70605aec603a.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/c1081fde-cce0-4b0b-a68c-f411c34bffc4.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/f632621c-d413-4f7b-93b9-3a774f870fec.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/27bf212c-dda3-45eb-973a-463a618f3452.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/0ecef18c-278a-40c5-a738-bdc5235a8753.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/1be64860-65f2-4f47-a216-36afe0901c2b.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/2486fb6b-75bc-4d57-8b34-ff8fc212997a.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/76f57855-7f59-4b9e-896c-ff7eb54ddfea.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/be9b00ac-1f2f-41bd-9d60-6652ed8daaa2.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/85e96c18-ed57-46c1-9dde-4c275f7573a8.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/ebb84f6f-5c8c-4f14-a36e-5472f0fb76ac.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/7fa27a1d-cc83-42b2-aeaf-eb3d74a7970f.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/ca40e600-42a2-4cd6-8a61-1b913347dbc2.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/f0f05686-b9ea-4a23-8336-17700afcedcc.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/ad2f1209-1266-4574-9184-389925f63151.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/393732cd-19d9-474c-8cdf-fa0d1079a128.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/c1f5d0a2-8066-4fce-a83f-49c5b861e606.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/c947091f-5e2d-4293-94fd-b2ba0c5f283c.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/4678175f-a384-4e3d-9d09-f8fcce4d8b85.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/4b165e62-1317-457b-b5c7-867d0bab2b13.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/8cc96fe4-6d10-44dd-ba4d-b81b8327319b.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/a5c0dc32-864b-463c-ac6f-c5044d89400b.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/cf00e773-a8a2-47ab-838c-c6e0093049f0.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/deb80ee7-406f-4e70-849c-abc6cf632748.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/55fc9213-ff5c-47fc-9c08-fb99c4fa80e8.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/81ae399e-8fe9-4a47-87c3-0c0c90ca2a36.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/c3ef09e4-b641-4e02-8a38-cd5d06b40e7f.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/7588cd99-ec80-4f78-98eb-a8753ed3011f.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/32647b61-508f-4b72-ab51-fc16e69fb803.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/691e83fe-a486-4b13-8a2d-a0fa3fb129da.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/b656f90a-edf6-42c1-a807-065a217fbe35.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/d2ef6c0d-0a86-4062-9a96-3e2c9533ec2a.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/ec5c09b0-f0d7-41f7-9519-5465fcc6924b.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/203da257-2c2f-4c3e-aa2d-9be0945273b4.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/4b75a0e8-7814-4ca2-93c1-b88ff13a8756.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/fc7a0d03-692c-4950-a673-bcd33f25339c.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/25f9174d-57b0-49df-af75-ca9a27ae8991.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/864a7a35-9e4f-4fe8-8352-68af72a1f374.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/cc367810-f330-4afd-8539-12462630666c.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/385387d0-b657-48d8-9692-e33ad881b873.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/7baa8ef8-635a-4679-b1d0-ac3968b37a14.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/885c05fb-bc76-4973-9de8-24a841f2e653.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/bcf9dda9-e5b2-4b94-b1ed-3e55c8e34bd1.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/bb46eedf-22f5-4454-baff-3860599cc909.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/e116af21-7ad3-4a54-8e0b-6debd7f7c7f7.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/41e89ebf-2106-4189-94ab-30eac36811e5.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/9790c1d4-249c-4c69-97c3-ea7ad9bdb879.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/337c6bbe-e9da-402c-b464-1b009f5e161f.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/90aa0bfb-24f5-4fc1-b4d6-8af8c0b07cbf.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/d6fd2c71-bb5a-4537-9481-a8d2a78b9069.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/392af109-dd50-4d69-87b2-5a83970a36c0.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/be9588f2-547c-4293-89f8-7f42c7b7a7fe.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/dedaa5cc-1805-4ea5-bb25-ff6cbc5bc2ae.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/415e09c8-5e4a-49e9-9ca6-275458b0a002.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/f14f35ad-dbdb-4c28-8c58-afc30b6beabf.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/34bcaeeb-3d58-42f7-b900-3e4071fe8ac7.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/2a30c8ef-96f7-40b4-9f45-e80902a06b61.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/42f361df-6501-48aa-8955-c91be4b6b21b.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/08b38d53-2fa2-4026-bf66-b702a03dd9cc.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/f67630c4-da71-4eba-963f-6385df470f51.vsidx
+GameCoding/.vs/GameCoding/FileContentIndex/cc115172-5342-409b-ae01-3bacc852564c.vsidx
+
+# Visual Studio 2015 user specific files
+.vs/
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+*.ipa
+
+# These project files can be generated by the engine
+*.xcodeproj
+*.xcworkspace
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# Precompiled Assets
+SourceArt/**/*.png
+SourceArt/**/*.tga
+
+# Binary Files
+Binaries/*
+Plugins/*/Binaries/*
+
+# Builds
+Build/*
+
+# Whitelist PakBlacklist-<BuildConfiguration>.txt files
+!Build/*/
+Build/*/**
+!Build/*/PakBlacklist*.txt
+
+# Don't ignore icon files in Build
+!Build/**/*.ico
+
+# Built data for maps
+*_BuiltData.uasset
+
+# Configuration files generated by the Editor
+Saved/*
+
+# Compiled source files for the engine to use
+Intermediate/*
+Plugins/*/Intermediate/*
+
+# Cache files for the editor to use
+DerivedDataCache/*
+.DS_Store
+
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures can get excessive in size.
+# They also could contain extremely sensitive data
+/[Mm]emoryCaptures/
+
+# Recordings can get excessive in size
+/[Rr]ecordings/
+
+# Uncomment this line if you wish to ignore the asset store tools plugin
+# /[Aa]ssets/AssetStoreTools*
+
+# Autogenerated Jetbrains Rider plugin
+/[Aa]ssets/Plugins/Editor/JetBrains*
+
+# Visual Studio cache directory
+.vs/
+
+# Gradle cache directory
+.gradle/
+
+# Autogenerated VS/MD/Consulo solution and project files
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# Crashlytics generated file
+crashlytics-build.properties
+
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02533DF32BE272D400B553F1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02533DF22BE272D400B553F1 /* main.cpp */; };
+		026E2F342BF629EB006E995A /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 026E2F322BF629EB006E995A /* Vector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		02533DEF2BE272D400B553F1 /* GameCoding */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameCoding; sourceTree = BUILT_PRODUCTS_DIR; };
 		02533DF22BE272D400B553F1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
+		026E2F322BF629EB006E995A /* Vector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
+		026E2F332BF629EB006E995A /* Vector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 		02533DF12BE272D400B553F1 /* GameCoding */ = {
 			isa = PBXGroup;
 			children = (
+				026E2F322BF629EB006E995A /* Vector.cpp */,
+				026E2F332BF629EB006E995A /* Vector.hpp */,
 				02533DF22BE272D400B553F1 /* main.cpp */,
 			);
 			path = GameCoding;
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026E2F342BF629EB006E995A /* Vector.cpp in Sources */,
 				02533DF32BE272D400B553F1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,6 +250,7 @@
 		02533DF72BE272D400B553F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RX8HVYCQV;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -254,6 +261,7 @@
 		02533DF82BE272D400B553F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RX8HVYCQV;
 				ENABLE_HARDENED_RUNTIME = YES;

@@ -5,154 +5,83 @@ using namespace std;
 #include <queue>
 #include <map>
 #include <set>
+#include <unordered_map>
 
-// map이랑 set이랑 짝꿍이다.
-// 키값만 있냐, 키와 밸류가 묶여 있냐 차이다.
-// 보통 키와 밸류가 묶여 있기 때문에 map으로 먼저 공부한다.
+// hash_map과 map은 되게 비슷하다. 그렇다면 뭐가 다르냐?
+// 예전에는 hash_map으로 썼는데 최근에는 unordered_map이 되었다.
 
-class Player
-{
-public:
-    Player() { }
-    Player(int id) : _id(id) {}
+// 살을 내주고 뼈를 취한다!
+// 메모리를 팔아서 성능을 얻겠다!
+// ^ 해쉬맵은 이런 느낌이라고 보면 된다.
 
-public:
-    int _id = 0;
-};
+// 아파트 우편함
+// [201][202][203][204]
+// [101][102][103][104]  < 호수별로 우편함이 있다
+// 서칭을 하고자 하면 그냥 내 것만 찾아가면 된다. O(1)
 
-// 만약 Player가 들고 있는 변수의 규모가 굉장히 커진다면,
-// Q) vector에 모든 Player 정보를 담는 것이 합당한가? vector로 관리해도 되는가?
-// -> 그래서 실제로는 참조로 들고 있는 것처럼
-//      vector<Player*> 이렇게 동적할당으로 들고 있는 경우가 많을 것이다.
-//      이렇게 만들게 되면 성능은 좋아지는 대신 소멸까지 책임져야 한다.
+// 만약 유저가 1~999까지 있다면
+// [1][2][3][4]...[999]
+// 유저 8번을 찾고 싶다면 [8]에 있을 것임
+// 메모리가 무한대라면 이 방식이 가장 효율적일 것임
 
-template<typename T, typename U>
-struct Pair
-{
-    T first;
-    U second;
-};
+// 현실적으로 메모리 무한대가 아님
+// 키를 알면 빠르게 찾을 수 있다는 것이 포인트임
+// 1:1로 맵핑을 하는 게 이상적이겠지만 현실적으로는 불가능하니까 방법이 필요
 
-template<typename T, typename U>
-void MakePair(T first, U second)
-{
-    //return std::pair<T, U>(first, second);
-    // mac에서 안 돼서 주석처리 함 원래 이거 그대로 씀
-}
+// hash 기법: 보안에서 많이 쓰인다
+// id: rookiss / pw: 1234@
+// 예전에 보안이 약할 때는 데이터베이스에 id와 pw 그 자체 정보를 넣었다
+// 해킹당하면 바로 유출당하는 구조
+// 그래서 요즘엔 pw->hash(1234@) = sdf12312431fdafe (거의 겹칠 확률이 0인 것으로 바꿔줌)
+// 바뀐 정보로 원래 비번을 알 수가 없음, 그렇지만 1234@와 hash 알고리즘을 알면 무조건 뒷쪽 정보가 나옴
+// 단방향 정보인 것임. 단방향에서 hash가 의미가 있다.
+
+
+// 학원 같은 곳에서는 ㄱㄴㄷㄹ 순서로 학생 이름 관리
+// 10,000개 칸이 있는데
+// (% 10,000) 수식을 취한 것을 키라고 친다면
+// 10000203444000002 -> 10,000으로 나누면 2
+// 그래서 결국 2에 들어가는 건 변함이 없음
+// 아무리 복잡한 값이더라도 hash를 취해서 그 칸에 데이터를 넣어준다는 것.
+// 최대한 다른 애들이랑 겹치지 않도록 추출하는 게 중요하다
+// 메모리가 클수록 빠른데 메모리를 버리는 방식이긴 하다
+
+// 통을 늘려서 거기에 쏙쏙쏙 집어넣는 형식
+// 데이터가 엄청 많아서 겹친다면 점점 느려진다
+// 레드블랙이랑 크게 다르지는 않은데 굳이 레드블랙 어렵게 쓰지 않고 해쉬맵 쓸 수 있음
+
 
 int main()
 {
-    vector<Player*> v;
-    v.push_back(new Player(100));
-    v.push_back(new Player(200));
-    v.push_back(new Player(300));
-    v.push_back(new Player(400));
-    v.push_back(new Player(500));
-
-    // vector로 관리하면 중간 삽입/삭제 같은 것에 한계가 있다.
-    // map으로 관리하면 균형도 잘 맞을 뿐더러 왼쪽으로 가면 작고, 오른쪽으로 가면 크다.
-    // 업앤다운 놀이도 가능한 만능형 자료구조가 생긴 것이다.
+    // hash_map
     
-    // (key, value) 형식으로 저장 가능한 것이 map이다.
-    map<int, Player*> m;
     
-    // 추가
+    // 서칭 - 안 겹칠수록 O(1)의 시간복잡도
+    unordered_map<int, int> um;
+    
+    // 추가, map이랑 거의 똑같이 사용 가능
+    um.insert(make_pair(10, 100));
+    um[20] = 200;
+    
     // 찾기
-    // 삭제
-    // 순회
-
-    // 추가?
-    Pair<int, Player*> p;
-    int key = p.first;
-    Player* value = p.second;
-
-    // 벡터로 있는 정보를 추가한다면
-    for (Player* player : v)
+    auto findIt = um.find(10);
+    if (findIt != um.end() )
     {
-        int key = player->_id;
-        Player* data = player;
-        //m.insert(pair<int, Player*>(key, value));
-        // 만약 위의 코드가 귀찮다면?
-
-        MakePair(key, value); // = MakePair<int, Player*>(key, value);
-        // auto랑 template은 비슷한 느낌이다.
-        // auto, template은 컴파일러가 유추를 해줘서 형식 생략 가능하다.
-        // 이 코드를 공식에서도 지원을 한다.
-        m.insert(make_pair(key, value));
-        // make_pair가 공식에서 지원하는 함수.
+        cout << "찾음" << endl;
+        um.erase(findIt);
     }
-
-    for (Player* player : v)
-    {
-        // 결국 간단하게 추가하고 싶으면 이렇게 쓰면 됨.
-        // 위의 for문과 완전히 동일
-        m.insert(make_pair(key, value));
-        
-        //m[player->_id] = player;
-        // 위처럼 넣어도 되긴 하는데 덮어쓰는 문제랑 자동적 만들어지는 문제에 엮여있어서
-        // 나중에 언급하기로 하고 첫 번째 방식만 언급하기로 한다.
-    }
-
-    
-    // 찾기, vector는 순차적으로 찾는 형식이었음
-    // map은 왼쪽으로 가냐, 오른쪽으로 가냐 이진탐색으로 효율적 탐색 가능.
-    auto it = m.find(300);    // iterator를 뱉는다.
-    
-    // 사용법 1
-    auto whoami = *it;
-    whoami.first;
-    whoami.second;
-    
-    // 사용법 2
-    it = m.find(300);    // O(logN), 이진탐색과 동일하다.
-    if (it != m.end())
-    {
-        int key = it->first;
-        cout << key << endl;
-        Player* value = it->second;
-    }
-    else
-    {
-        cout << "없음" << endl;
-    }
-
-    
+    else cout << "없음" << endl;
     
     // 삭제
-    m.erase(200);
-    m.erase(it);
-    
+    um.erase(10);
     
     // 순회
-    for ( auto it = m.begin(); it != m.end() ; it++ )
+    for (auto it = um.begin() ; it != um.end() ; it++)
     {
         int key = it->first;
-        Player* p = it->second;
+        int value = it->second;
     }
     
-    
-    // 데이터를 찾을 때 find를 사용해도 좋지만
-    // 조금 더 빠르게 찾는 방식이 있다.
-    
-    //Player* p = m[100];
-    // 100번째 해당하는 value에 해당하는 값을 꺼내오라는 말이다.
-    // 그렇지만 문제가 있다. 없는 키값을 넣었다면?
-    // C++ STL vs UE TMap 둘이 다르게 반응한다.
-    //  - C++에서는 갖고 오되, 없으면 기본값으로 추가해 달라는 뜻으로 쓰임.
-    //    데이터가 막 늘어날 수 있는 가능성이 있어서 조심해야 한다.
-    //  - UE에서는 없다고 크래쉬가 난다. 조심해야 한다.
-    
-    // m.size() == 0; ( = m.empty(); ) 둘이 같은 것이다.
-    // 언리얼에서는 TMap의 empty()가 clear와 같이 모든 정보를 날려버리는 것이다.
-    
-    // map의 장점: 빠르게 찾을 수 있게 해 준다.
-    // map의 단점: 데이터가 얼마 없다면 그냥 vector에서 관리해도 부담 없다.
-    // 너무 고등 기술이니까 간단하게 할 거면 굳이 사용할 필요는 없다.
-    
-    // C++ vector = C# List
-    // C++ list = C# LinkedList
-    // C++ hash_map = C# Dictionary
-    // C++ map = C#에서는 잘 안 씀. dictionary 씀.
-    // 해쉬맵 아주 중요한데 생각보다 대답 못 하는 사람이 많았다. 잘 알아둘것!!!
-    // 어려운 개념은 아니니까 잘 들어둬라.
+    // 그냥 map이랑 똑같다
+    // stl은 다 비슷하게 되어있으니 잘 선택해서 구현만 잘하면 된다.
 }

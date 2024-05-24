@@ -7,81 +7,151 @@ using namespace std;
 #include <set>
 #include <unordered_map>
 
-// hash_map과 map은 되게 비슷하다. 그렇다면 뭐가 다르냐?
-// 예전에는 hash_map으로 썼는데 최근에는 unordered_map이 되었다.
-
-// 살을 내주고 뼈를 취한다!
-// 메모리를 팔아서 성능을 얻겠다!
-// ^ 해쉬맵은 이런 느낌이라고 보면 된다.
-
-// 아파트 우편함
-// [201][202][203][204]
-// [101][102][103][104]  < 호수별로 우편함이 있다
-// 서칭을 하고자 하면 그냥 내 것만 찾아가면 된다. O(1)
-
-// 만약 유저가 1~999까지 있다면
-// [1][2][3][4]...[999]
-// 유저 8번을 찾고 싶다면 [8]에 있을 것임
-// 메모리가 무한대라면 이 방식이 가장 효율적일 것임
-
-// 현실적으로 메모리 무한대가 아님
-// 키를 알면 빠르게 찾을 수 있다는 것이 포인트임
-// 1:1로 맵핑을 하는 게 이상적이겠지만 현실적으로는 불가능하니까 방법이 필요
-
-// hash 기법: 보안에서 많이 쓰인다
-// id: rookiss / pw: 1234@
-// 예전에 보안이 약할 때는 데이터베이스에 id와 pw 그 자체 정보를 넣었다
-// 해킹당하면 바로 유출당하는 구조
-// 그래서 요즘엔 pw->hash(1234@) = sdf12312431fdafe (거의 겹칠 확률이 0인 것으로 바꿔줌)
-// 바뀐 정보로 원래 비번을 알 수가 없음, 그렇지만 1234@와 hash 알고리즘을 알면 무조건 뒷쪽 정보가 나옴
-// 단방향 정보인 것임. 단방향에서 hash가 의미가 있다.
+enum class ObjectType
+{
+    Player,
+    Monster,
+    Projectile,
+    Env
+};
 
 
-// 학원 같은 곳에서는 ㄱㄴㄷㄹ 순서로 학생 이름 관리
-// 10,000개 칸이 있는데
-// (% 10,000) 수식을 취한 것을 키라고 친다면
-// 10000203444000002 -> 10,000으로 나누면 2
-// 그래서 결국 2에 들어가는 건 변함이 없음
-// 아무리 복잡한 값이더라도 hash를 취해서 그 칸에 데이터를 넣어준다는 것.
-// 최대한 다른 애들이랑 겹치지 않도록 추출하는 게 중요하다
-// 메모리가 클수록 빠른데 메모리를 버리는 방식이긴 하다
+class Object
+{
+public:
+    Object(ObjectType type) : _type(type) { }
+    
+    virtual ~Object() { }
+    
+    // start
+    virtual void Init()
+    {
+        
+    }
+    
+    // update
+    virtual void Update()
+    {
+        
+    }
+    
+public:
+    ObjectType GetObjectType() { return _type; }
+    
+    int _id;
+    ObjectType _type;
+};
 
-// 통을 늘려서 거기에 쏙쏙쏙 집어넣는 형식
-// 데이터가 엄청 많아서 겹친다면 점점 느려진다
-// 레드블랙이랑 크게 다르지는 않은데 굳이 레드블랙 어렵게 쓰지 않고 해쉬맵 쓸 수 있음
 
+class Player : public Object
+{
+public:
+    Player() : Object(ObjectType::Player) { }
+    Player(int id) : Object(ObjectType::Player) { }
+};
+
+
+class Monster : public Object
+{
+public:
+    Monster() : Object(ObjectType::Monster) { }
+};
+
+
+class Projectile : public Object
+{
+public:
+    Projectile() : Object(ObjectType::Projectile) { }
+};
+
+
+class Env : public Object  // 채집물
+{
+public:
+    Env() : Object(ObjectType::Env) { }
+};
+
+class Field
+{
+public:
+    // 필드가 하나라면? 싱글톤
+    static Field* GetInstance()
+    {
+        static Field field;
+        return &field;
+    }
+    
+    void Update()
+    {
+        for ( auto& item : _objects)
+        {
+            Object* obj = item.second;
+            obj->Update();
+        }
+    }
+    
+    void Add(Object* player)
+    {
+        _objects.insert(make_pair(player->_id, player));
+    }
+    
+    void Remove(int id)
+    {
+        _objects.erase(id);
+    }
+    
+    Object* Get(int id)
+    {
+        auto findId = _objects.find(id);
+        if ( findId != _objects.end() )
+            return findId->second;
+        return nullptr;
+    }
+    
+private:
+    // vector?
+    // list?
+    // map?
+    // hash_map?
+    //unordered_map<int, Player*> _players;
+    //unordered_map<int, Monster*> _monsters;
+    //unordered_map<int, Projectile*> _projectiles;
+    //unordered_map<int, Env*> _env;
+    // 위의 것들을 objects로 통일
+    unordered_map<int, Object*> _objects;
+};
 
 int main()
 {
-    // hash_map
+    int* ptr = new int[5];
+    delete[] ptr;
+    // 몇개 칸인지 어떻게 알고 삭제를 하는가?
+    // HEAP [header(32, 5)][]
+    // HEAP 메모리 할당되는 곳 바로 뒤에 헤더가 붙어 있다. 헤더에 사이즈랑 데이터 정보가 적혀 있음.
+    // 이걸 이용해서 딜리트할 때도 판별해서 삭제하는 것이라 보면 된다.
     
     
-    // 서칭 - 안 겹칠수록 O(1)의 시간복잡도
-    unordered_map<int, int> um;
+//    Player* p = new Player();
+//    delete p; // 가상함수 소멸자 안 해 둬도 아무 문제 없음
     
-    // 추가, map이랑 거의 똑같이 사용 가능
-    um.insert(make_pair(10, 100));
-    um[20] = 200;
+//    Object* o = new Player();
+//    delete o;   // 가상함수 소멸자 해야만 문제가 없음
+                  //    메모리 릭 발생
     
-    // 찾기
-    auto findIt = um.find(10);
-    if (findIt != um.end() )
+    Field::GetInstance()->Add(new Player(1));
+    
+    Object* obj = Field::GetInstance()->Get(1);
+    if ( obj && obj->GetObjectType() == ObjectType::Player )
     {
-        cout << "찾음" << endl;
-        um.erase(findIt);
+        // 이렇게 dynamic_cast 안 쓰고 관리하는 방법도 있다.
+        Player* player = static_cast<Player*>(obj);
     }
-    else cout << "없음" << endl;
+     
+//     dynamic_cast = cast가 안 되면 nullptr 을 리턴
+//    Player* player = dynamic_cast<Player*>(Field::GetInstance()->Get(1));
     
-    // 삭제
-    um.erase(10);
-    
-    // 순회
-    for (auto it = um.begin() ; it != um.end() ; it++)
-    {
-        int key = it->first;
-        int value = it->second;
-    }
-    
-    // 그냥 map이랑 똑같다
-    // stl은 다 비슷하게 되어있으니 잘 선택해서 구현만 잘하면 된다.
+//    if ( player )
+//    {
+//        
+//    }
 }
